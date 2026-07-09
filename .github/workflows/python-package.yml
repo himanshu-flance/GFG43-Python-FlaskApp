@@ -9,16 +9,16 @@ on:
   pull_request:
     branches: [ "main" ]
 
-jobs:
+jobs: # jobs 1
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # worker/agent github hosted
     strategy:
       fail-fast: false
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
 
-    steps:
+    steps: # task inside a job
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
