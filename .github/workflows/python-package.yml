@@ -39,7 +39,7 @@ jobs:
       run: |
         pytest
 
-  docker-image-build: #job2
+  docker-image-build-and-push: #job2
     runs-on: ubuntu-latest # worker/agent github hosted
       steps:
       -
