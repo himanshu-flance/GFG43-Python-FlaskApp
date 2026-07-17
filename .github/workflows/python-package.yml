@@ -12,7 +12,8 @@ on:
 jobs: 
   python-test: # jobs 1
 
-    runs-on: ubuntu-latest # worker/agent github hosted
+    #runs-on: ubuntu-latest # worker/agent github hosted
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
