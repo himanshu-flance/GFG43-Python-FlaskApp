@@ -49,7 +49,8 @@ jobs:
   sonarqube-analysis: #job2
     name: Build and analyze
     needs: python-test
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
@@ -79,7 +80,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   docker-image-build-and-push: #job3
-    runs-on: ubuntu-latest # worker/agent github hosted
+    #runs-on: ubuntu-latest # worker/agent github hosted
+    runs-on: self-hosted
     needs: ['python-test','sonarqube-analysis'] # job3 depends on job2 
     steps:
       -
